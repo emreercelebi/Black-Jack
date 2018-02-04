@@ -135,7 +135,7 @@ public class BlackJackGame {
 				
 	}
 	
-	public void dealCards(ArrayList<Card> userCards, Stack<Boolean> userAces, ArrayList<Card> computerCards, Stack<Boolean> computerAces){
+	private void dealCards(ArrayList<Card> userCards, Stack<Boolean> userAces, ArrayList<Card> computerCards, Stack<Boolean> computerAces){
 		for (int i = 0; i < 2; i++){
 			Card card1 = deck[top++];
 			Card card2 = deck[top++];
@@ -160,7 +160,7 @@ public class BlackJackGame {
 		}
 	}
 	
-	public int hit(ArrayList<Card> cards, Stack<Boolean> aces, int total){
+	private int hit(ArrayList<Card> cards, Stack<Boolean> aces, int total){
 		Card card = deck[top++];
 		String rank = card.getRank();
 		cards.add(card);
