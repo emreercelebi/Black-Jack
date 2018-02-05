@@ -11,7 +11,7 @@ public class BlackJackGame {
 	public BlackJackGame(){
 		DeckOfCards cards = new DeckOfCards();
 		deck = cards.getDeck();
-		top = 0;
+		top = 0; //deck array index position, incremented when card is drawn
 		cardValues = new HashMap<String,Integer>();
 		fillMap(cardValues);
 		userTotal = 0;
@@ -144,6 +144,7 @@ public class BlackJackGame {
 			if (card1.getRank().equals("Ace")){
 				userAces.push(true);
 			}
+			//this will only happen if two aces are drawn on the first hand
 			if (userTotal > 21){
 				userAces.pop();
 				userTotal -= 10;
@@ -153,6 +154,7 @@ public class BlackJackGame {
 			if (card2.getRank().equals("Ace")){
 				computerAces.push(true);
 			}
+			//this will only happen if two aces are drawn on the first hand
 			if (computerTotal > 21){
 				computerAces.pop();
 				computerTotal -= 10;
